@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLYXSE — Python Backend Developer / Telegram Bot Developer</title>
+  <meta name="description" content="FLYXSE // Алексей — Python Backend-разработчик и Telegram Bot Developer из Беларуси. Создаю ботов для бизнеса, админ-панели, интеграции с API и базами данных.">
+  <meta name="theme-color" content="#06080c">
+  <meta property="og:title" content="FLYXSE // Алексей — Python Backend & Telegram Bots">
+  <meta property="og:description" content="Пишу ботов и бэкенд, которые не падают. Python, aiogram, pyrogram, SQLite.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306080c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='bold' fill='%233dffa2' text-anchor='middle'%3E%26gt;%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержимому</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="FLYXSE — на главную">
+        <span class="brand-mark" aria-hidden="true">&gt;_</span>
+        <span class="brand-name">FLYXSE</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="https://t.me/FLYXSE" target="_blank" rel="noopener">
+          Написать в TG
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Мобильная навигация">
+        <ul>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="https://t.me/FLYXSE" target="_blank" rel="noopener">Написать в TG</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="hero-wordmark">FLYXSE</span>
+        <span class="hero-glow"></span>
+        <span class="hero-grid"></span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            Python Backend · Telegram Bots · Беларусь
+          </p>
+
+          <h1 class="hero-title" id="hero-title">
+            Пишу ботов и&nbsp;бэкенд,<br>которые <span class="accent">не&nbsp;падают</span>
+          </h1>
+
+          <p class="hero-sub">
+            Я — Алексей, backend-разработчик и Telegram Bot Developer.
+            Проектирую архитектуру с нуля, пишу чистый типизированный код
+            и довожу проект до релиза. 1+ год коммерческого опыта, Middle+++.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://t.me/FLYXSE" target="_blank" rel="noopener">
+              Обсудить проект
+            </a>
+            <a class="btn btn-ghost" href="#projects">
+              Смотреть проекты
+              <span class="arrow" aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="terminal" role="group" aria-label="Терминал: знакомство с разработчиком">
+          <div class="terminal-bar">
+            <span class="traffic"><i></i><i></i><i></i></span>
+            <span class="terminal-title">flyxse@dev: ~</span>
+            <span class="terminal-status" id="terminal-status" aria-live="polite">готово</span>
+          </div>
+          <div class="terminal-body" id="terminal-body" aria-hidden="true">
+            <pre id="terminal-output"></pre>
+            <span class="terminal-cursor" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container hero-foot">
+        <ul class="tech-strip" aria-label="Технологии">
+          <li>Python 3.x</li>
+          <li>aiogram 3.x</li>
+          <li>pyrogram 2.x</li>
+          <li>SQLite</li>
+          <li>Git</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">$ cat stack.txt</p>
+          <h2 class="section-title" id="skills-title">Мой стек</h2>
+          <p class="section-sub">Инструменты, на которых я проектирую и запускаю ботов и сервисы.</p>
+        </div>
+
+        <ul class="skills-grid">
+          <li class="skill reveal">
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v6.5c0 3.5-2.7 6.1-7 7.5-4.3-1.4-7-4-7-7.5V7l7-4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2.2 2.2L15.5 9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <h3>Python 3.x</h3>
+              <p>Основной язык — асинхронный код, типизация, чистая архитектура.</p>
+            </div>
+          </li>
+          <li class="skill reveal">
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 0 0 0 20 10 10 0 0 0 0-20z" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8M12 8l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <h3>aiogram 3.x</h3>
+              <p>Боты с FSM, клавиатурами, медиа и гибкой многопользовательской логикой.</p>
+            </div>
+          </li>
+          <li class="skill reveal">
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.6"/><path d="M7 9h5M7 13h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="13" r="1.2" fill="currentColor"/></svg></span>
+            <div>
+              <h3>pyrogram 2.x</h3>
+              <p>UserBot-сценарии, автоматизация и интеграции под Telegram API.</p>
+            </div>
+          </li>
+          <li class="skill reveal">
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="7" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <div>
+              <h3>SQLite / SQL</h3>
+              <p>Проектирование схем, оптимизация запросов, работа с данными.</p>
+            </div>
+          </li>
+          <li class="skill reveal">
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 20v-4a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v4M14 20v-4a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <div>
+              <h3>Git</h3>
+              <p>Аккуратные коммиты, ветвление, командная работа в репозиториях.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">$ ./capabilities</p>
+          <h2 class="section-title" id="services-title">Что я умею</h2>
+          <p class="section-sub">Специализируюсь на создании Telegram-ботов любой сложности и backend-части под них.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card reveal">
+            <span class="card-num" aria-hidden="true">01</span>
+            <h3>Боты для бизнеса</h3>
+            <p>Каталоги, корзина, онлайн-оплата, выгрузка заказов. Полный цикл магазина внутри Telegram.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-num" aria-hidden="true">02</span>
+            <h3>Админ-панели</h3>
+            <p>Рассылки, статистика, управление пользователями — управляйте бизнесом прямо из мессенджера.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-num" aria-hidden="true">03</span>
+            <h3>Интеграции API</h3>
+            <p>Платёжные системы, CRM, внешние сервисы. Объединяю сервисы в одну рабочую схему.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-num" aria-hidden="true">04</span>
+            <h3>Базы данных</h3>
+            <p>Проектирование схем с нуля, оптимизация запросов, аккуратная миграция данных.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-num" aria-hidden="true">05</span>
+            <h3>Многопользовательская логика</h3>
+            <p>FSM-состояния, диалоги, гибкие сценарии — бот ведёт каждого пользователя своей тропой.</p>
+          </article>
+
+          <article class="card card-accent reveal">
+            <h3>Архитектура с нуля</h3>
+            <p>Разбираюсь в бизнес-логике заказчика и предлагаю оптимальное решение. Пишу код, который не стыдно показать.</p>
+            <a class="btn btn-primary" href="https://t.me/FLYXSE" target="_blank" rel="noopener">Заказать бота</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">$ ls ~/projects</p>
+          <h2 class="section-title" id="projects-title">Проекты</h2>
+          <p class="section-sub">Публичные репозитории и боты, которые уже работают в продакшене.</p>
+        </div>
+
+        <ul class="projects-list">
+          <li class="project reveal">
+            <a href="https://github.com/FLYXSE/MemDice" target="_blank" rel="noopener">
+              <span class="project-top">
+                <span class="project-name">MemDice</span>
+                <span class="project-link" aria-hidden="true">↗</span>
+              </span>
+              <span class="project-desc">Игровой Telegram-бот с механикой кубиков (dice) и приёмом платежей через CryptoPay.</span>
+              <span class="project-meta">Python · aiogram · CryptoPay</span>
+            </a>
+          </li>
+
+          <li class="project reveal">
+            <a href="https://github.com/FLYXSE/TG-Assistant" target="_blank" rel="noopener">
+              <span class="project-top">
+                <span class="project-name">TG-Assistant</span>
+                <span class="project-link" aria-hidden="true">↗</span>
+              </span>
+              <span class="project-desc">Бот для публикации постов в канал с настраиваемыми кнопками и гибкими параметрами вывода.</span>
+              <span class="project-meta">Python · aiogram · SQLite</span>
+            </a>
+          </li>
+
+          <li class="project reveal">
+            <a href="https://github.com/FLYXSE/LSD-Assistant" target="_blank" rel="noopener">
+              <span class="project-top">
+                <span class="project-name">LSD-Assistant</span>
+                <span class="project-link" aria-hidden="true">↗</span>
+              </span>
+              <span class="project-desc">Мощный UserBot для Telegram на Pyrogram с модульной архитектурой и множеством функций.</span>
+              <span class="project-meta">Python · pyrogram · модули</span>
+            </a>
+          </li>
+
+          <li class="project reveal">
+            <a href="https://t.me/lesy_polotno_bot" target="_blank" rel="noopener">
+              <span class="project-top">
+                <span class="project-name">Аудиогид «Лёсу палатно»</span>
+                <span class="project-badge">продакшен</span>
+                <span class="project-link" aria-hidden="true">↗</span>
+              </span>
+              <span class="project-desc">Интерактивный аудиогид для музейной экспозиции: маршруты, экспонаты, аудио.</span>
+              <span class="project-meta">Telegram Bot · музей</span>
+            </a>
+          </li>
+
+          <li class="project reveal">
+            <a href="https://t.me/Graf_Tolochko_Bot" target="_blank" rel="noopener">
+              <span class="project-top">
+                <span class="project-name">Усадьба графа Толочко</span>
+                <span class="project-badge">продакшен</span>
+                <span class="project-link" aria-hidden="true">↗</span>
+              </span>
+              <span class="project-desc">Аудиогид-бот для исторической усадьбы — история и экскурсия в одном чате.</span>
+              <span class="project-meta">Telegram Bot · экскурсии</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section facts" aria-label="Факты">
+      <div class="container facts-grid">
+        <div class="fact reveal">
+          <span class="fact-num">1+</span>
+          <span class="fact-label">год коммерческого опыта</span>
+        </div>
+        <div class="fact reveal">
+          <span class="fact-num">5+</span>
+          <span class="fact-label">проектов в работе и продакшене</span>
+        </div>
+        <div class="fact reveal">
+          <span class="fact-num">24/7</span>
+          <span class="fact-label">на связи с заказчиком</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner reveal">
+        <p class="kicker">$ send_message</p>
+        <h2 class="contact-title" id="contact-title">Есть идея бота?<br>Обсудим.</h2>
+        <p class="contact-sub">
+          Отвечаю быстро, не пропадаю. Пишите — расскажете о задаче,
+          я предложу решение и сроки.
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" href="https://t.me/FLYXSE" target="_blank" rel="noopener">
+            Telegram — @FLYXSE
+          </a>
+        </div>
+
+        <ul class="contact-links">
+          <li>
+            <a href="https://github.com/FLYXSE" target="_blank" rel="noopener">
+              <span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5A3.9 3.9 0 0 1 6.4 8.5a3.6 3.6 0 0 1 .1-2.7s.8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.6.2 2.8.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></span>
+              GitHub — FLYXSE
+            </a>
+          </li>
+          <li>
+            <a href="https://kwork.ru/user/flyxse" target="_blank" rel="noopener">
+              <span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v16M8 8h8" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              Kwork — user/flyxse
+            </a>
+          </li>
+          <li>
+            <button class="copy-mail" type="button" id="copy-mail" data-mail="FLYXSE@TUTA.IO">
+              <span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 3h13a1 1 0 0 1 1 1v13" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              <span class="copy-label">FLYXSE@TUTA.IO</span>
+              <span class="copy-state" aria-live="polite"></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">FLYXSE <span>//</span> Алексей</p>
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <a href="#skills">Навыки</a>
+        <a href="#services">Услуги</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <p class="footer-note">© 2026 · Python Backend Developer / Telegram Bot Developer · Беларусь</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>

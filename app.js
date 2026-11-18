@@ -53,12 +53,10 @@
 
   /* ---------------------------------------------------------- app bar */
   var appBar = document.getElementById('app-bar');
-  var fab = document.querySelector('.fab');
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
     if (appBar) appBar.classList.toggle('app-bar--scrolled', y > 8);
-    if (fab) fab.classList.toggle('is-visible', y > 500);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -198,7 +196,5 @@
     }
   }
 
-  /* ---------------------------------------------------------- год в подвале */
-  var yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  /* ---------------------------------------------------------- конец */
 })();

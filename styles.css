@@ -373,34 +373,6 @@ img, svg { display: block; max-width: 100%; }
   max-width: 900px;
 }
 
-.hero__chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 32px;
-  padding-inline: 14px;
-  margin-bottom: 28px;
-  border-radius: var(--md-sys-shape-corner-full);
-  background: var(--md-sys-color-tertiary-container);
-  color: var(--md-sys-color-on-tertiary-container);
-  font-size: var(--md-sys-typescale-label-medium-size);
-  font-weight: var(--md-sys-typescale-weight-medium);
-  letter-spacing: .02em;
-}
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: currentColor;
-  box-shadow: 0 0 0 0 currentColor;
-  animation: pulse 2.4s var(--md-sys-motion-easing-standard) infinite;
-}
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 60%, transparent); }
-  70%  { box-shadow: 0 0 0 7px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
-
 .hero__kicker {
   margin-bottom: 12px;
   font-size: var(--md-sys-typescale-title-medium-size);

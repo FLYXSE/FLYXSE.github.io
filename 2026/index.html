@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Год в Telegram — 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment: #f2f0eb;
+  --ink: #292827;
+  --stone: #666666;
+  --mist: #e3e3e2;
+  --wine: #421d24;
+  --violet: #714cb6;
+  --lilac: #d4c7ff;
+  --lagoon: #0c4243;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 460;
+  overflow: hidden;
+}
+.deck {
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.deck::-webkit-scrollbar { display: none; }
+
+.slide {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: clamp(72px, 10vh, 120px) clamp(24px, 6vw, 96px);
+}
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* — типографика — */
+.display {
+  font-weight: 460;
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  margin: 0;
+}
+.num { font-size: clamp(72px, 17vw, 190px); }
+.num-md { font-size: clamp(56px, 12vw, 132px); }
+h1, h2 { font-weight: 460; letter-spacing: -0.03em; line-height: 1.04; margin: 0; }
+h1 { font-size: clamp(40px, 7vw, 76px); }
+h2 { font-size: clamp(28px, 4.6vw, 49px); }
+.lead { font-size: clamp(16px, 2vw, 20px); line-height: 1.5; color: var(--ink); max-width: 46ch; }
+.footnote { font-size: 14px; line-height: 1.5; color: var(--stone); max-width: 52ch; margin-top: 14px; }
+.value { font-feature-settings: 'tnum' 1; letter-spacing: -0.02em; }
+
+/* — прогресс, как в сторис — */
+.progress {
+  position: fixed; top: 14px; left: 18px; right: 18px;
+  display: flex; gap: 4px; z-index: 20;
+}
+.progress i {
+  flex: 1; height: 3px; border-radius: 999px;
+  background: var(--mist); overflow: hidden; position: relative;
+}
+.progress i::after {
+  content: ''; position: absolute; inset: 0;
+  background: var(--wine); transform: scaleX(0); transform-origin: left;
+  transition: transform .45s ease;
+}
+.progress i.done::after { transform: scaleX(1); }
+.counter {
+  position: fixed; right: 18px; bottom: 16px; z-index: 20;
+  font-size: 13px; color: var(--stone); font-feature-settings: 'tnum' 1;
+}
+.hint {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 20; font-size: 14px; color: var(--stone);
+  animation: nudge 2.4s ease-in-out infinite;
+}
+@keyframes nudge { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
+
+/* — появление слайда — */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.slide.in .reveal { opacity: 1; transform: none; }
+
+/* — бары чатов/типов — */
+.rows { display: flex; flex-direction: column; gap: 18px; margin-top: 36px; max-width: 560px; }
+.row { display: grid; grid-template-columns: minmax(96px, 1fr) 2.4fr auto; gap: 14px; align-items: center; }
+.row .name { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .name.ghost { filter: blur(7px); user-select: none; }
+.row .track { height: 12px; background: var(--mist); border-radius: 999px; overflow: hidden; }
+.row .fill { display: block; height: 100%; background: var(--ink); border-radius: 999px; width: 0; transition: width .7s cubic-bezier(.2,.7,.2,1); }
+.row.hero .fill { background: var(--wine); }
+.row.hero .name { font-weight: 600; }
+.slide.in .fill { width: var(--w); }
+.row .val { font-size: 15px; font-feature-settings: 'tnum' 1; color: var(--stone); min-width: 5ch; text-align: right; }
+
+/* — голос/кружки — */
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); margin-top: 40px; max-width: 640px; }
+.duo > div + div { border-left: 1px solid var(--mist); padding-left: clamp(24px, 5vw, 72px); }
+.kv .k { font-size: clamp(40px, 7vw, 88px); font-weight: 460; letter-spacing: -0.03em; line-height: 1; font-feature-settings: 'tnum' 1; }
+.kv .l { font-size: 15px; color: var(--stone); margin-top: 10px; }
+.kv .s { font-size: 14px; color: var(--ink); margin-top: 4px; }
+
+/* — медиа-сетка — */
+.grid6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 5vw, 64px) clamp(24px, 4vw, 56px); margin-top: 44px; max-width: 780px; }
+.grid6 > div { border-top: 1px solid var(--mist); padding-top: 14px; }
+.grid6 .k { font-size: clamp(34px, 5vw, 64px); font-weight: 460; letter-spacing: -0.03em; line-height: 1; font-feature-settings: 'tnum' 1; white-space: nowrap; }
+.grid6 .l { font-size: 14px; color: var(--stone); margin-top: 8px; }
+
+/* — полоса часов — */
+.hours { display: flex; align-items: flex-end; gap: 2px; height: clamp(120px, 22vh, 200px); margin-top: 44px; max-width: 680px; }
+.hours i { flex: 1; background: var(--mist); border-radius: 3px 3px 0 0; height: calc(var(--h) * 1%); transition: height .6s cubic-bezier(.2,.7,.2,1); }
+.slide.in .hours i { height: calc(var(--h) * 1%); }
+.hours i.night { background: var(--wine); }
+.hours i.peak { background: var(--violet); }
+.clock { display: flex; gap: 2px; max-width: 680px; margin-top: 10px; }
+.clock span { flex: 1; text-align: left; font-size: 12px; color: var(--stone); font-feature-settings: 'tnum' 1; }
+
+/* — месяцы — */
+.months { display: flex; align-items: flex-end; gap: clamp(6px, 1.6vw, 18px); height: clamp(130px, 24vh, 220px); margin-top: 44px; max-width: 680px; }
+.months div { flex: 1; background: var(--mist); border-radius: 4px 4px 0 0; position: relative; }
+.months div.hi { background: var(--wine); }
+.mlabels { display: flex; gap: clamp(6px, 1.6vw, 18px); max-width: 680px; margin-top: 10px; }
+.mlabels span { flex: 1; font-size: 12px; color: var(--stone); text-align: center; }
+.mlabels span.hi { color: var(--wine); font-weight: 600; }
+
+/* — эмодзи — */
+.emoji { display: flex; flex-wrap: wrap; gap: clamp(20px, 4vw, 56px); margin-top: 44px; max-width: 640px; }
+.emoji div { text-align: center; }
+.emoji b { display: block; font-size: clamp(40px, 7vw, 72px); font-weight: 400; line-height: 1.2; }
+.emoji span { display: block; font-size: 13px; color: var(--stone); margin-top: 6px; font-feature-settings: 'tnum' 1; }
+
+/* — финал — */
+.final .wrap { display: grid; grid-template-columns: 1fr auto; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.cardwrap canvas { max-height: 58dvh; width: auto; max-width: 100%; display: block; }
+.btn {
+  background: var(--wine); color: var(--paper);
+  border: none; border-radius: 16px;
+  padding: 16px 32px; font: inherit; font-size: 17px; font-weight: 500;
+  cursor: pointer; margin-top: 28px;
+}
+.btn:hover { background: #33161c; }
+.btn:active { transform: scale(.98); }
+.btn:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 80px);
+  background: var(--wine); color: var(--paper);
+  padding: 12px 20px; border-radius: 999px; font-size: 14px;
+  transition: transform .35s ease; z-index: 30; pointer-events: none;
+}
+.toast.show { transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+  .final { padding-top: 56px; padding-bottom: 44px; }
+  .final .wrap { grid-template-columns: 1fr; justify-items: start; }
+  .final .btn { margin-top: 20px; }
+  .cardwrap canvas { max-height: 40dvh; }
+  .grid6 { grid-template-columns: repeat(2, 1fr); }
+  .duo { gap: 20px; }
+  .duo > div + div { padding-left: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .row .fill, .hours i, .hint, .progress i::after { transition: none !important; animation: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .row .fill { width: var(--w); }
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="counter" id="counter"></div>
+<div class="hint" id="hint">листай вниз</div>
+<div class="toast" id="toast">Карточка сохранена</div>
+
+<main class="deck" id="deck">
+
+  <!-- 1 · обложка -->
+  <section class="slide" aria-label="Обложка">
+    <div class="wrap" style="text-align:center">
+      <div class="reveal">
+        <p class="footnote" style="margin:0 auto 18px">@FLYXSE</p>
+        <h1>Твой год<br>в Telegram</h1>
+        <div class="display num-md value" style="color: var(--wine); margin-top: 18px;">2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · сообщения -->
+  <section class="slide" aria-label="Сообщения">
+    <div class="wrap reveal">
+      <div class="display num">20 984</div>
+      <h2 style="margin-top: 18px;">сообщений отправлено</h2>
+      <p class="lead" style="margin-top: 22px;">И 117 838 получено — в 5,6 раза больше, чем ушло от тебя. В среднем 65 сообщений в день, каждый день года.</p>
+    </div>
+  </section>
+
+  <!-- 3 · символы -->
+  <section class="slide" aria-label="Символы">
+    <div class="wrap reveal">
+      <div class="display num" style="font-size: clamp(56px, 14vw, 150px)">691 336</div>
+      <h2 style="margin-top: 18px;">символов написано</h2>
+      <p class="footnote">Около 380 страниц А4. Книга, которую ты написал, сам того не заметив.</p>
+    </div>
+  </section>
+
+  <!-- 4 · чаты -->
+  <section class="slide" aria-label="Чаты">
+    <div class="wrap reveal">
+      <h2>594 чата услышали<br>от тебя хоть слово</h2>
+      <div class="rows">
+        <div class="row hero"><span class="name">Личные чаты</span><span class="track"><span class="fill" style="--w: 96%"></span></span><span class="val">224</span></div>
+        <div class="row"><span class="name">Боты</span><span class="track"><span class="fill" style="--w: 100%"></span></span><span class="val">233</span></div>
+        <div class="row"><span class="name">Каналы</span><span class="track"><span class="fill" style="--w: 45%"></span></span><span class="val">105</span></div>
+        <div class="row"><span class="name">Группы</span><span class="track"><span class="fill" style="--w: 13%"></span></span><span class="val">31</span></div>
+      </div>
+      <p class="footnote">А ещё 70 чатов молча лежат в архиве — весь год ни звука.</p>
+    </div>
+  </section>
+
+  <!-- 5 · топ людей -->
+  <section class="slide" aria-label="Топ переписок">
+    <div class="wrap reveal">
+      <h2>С кем ты говорил<br>больше всего</h2>
+      <div class="rows">
+        <div class="row hero"><span class="name ghost">Личный чат</span><span class="track"><span class="fill" style="--w: 100%"></span></span><span class="val">4 800</span></div>
+        <div class="row"><span class="name ghost">Личный чат</span><span class="track"><span class="fill" style="--w: 37%"></span></span><span class="val">1 779</span></div>
+        <div class="row"><span class="name ghost">Личный чат</span><span class="track"><span class="fill" style="--w: 31%"></span></span><span class="val">1 509</span></div>
+        <div class="row"><span class="name ghost">Групповой чат</span><span class="track"><span class="fill" style="--w: 26%"></span></span><span class="val">1 245</span></div>
+        <div class="row"><span class="name ghost">Личный чат</span><span class="track"><span class="fill" style="--w: 26%"></span></span><span class="val">1 229</span></div>
+      </div>
+      <p class="footnote">Имена на этом слайде скрыты: топ-1 забрал 4 800 твоих сообщений за год — и вернул 6 384.</p>
+    </div>
+  </section>
+
+  <!-- 6 · голос -->
+  <section class="slide" aria-label="Голос">
+    <div class="wrap reveal">
+      <h2>24 минуты голосом</h2>
+      <div class="duo">
+        <div class="kv">
+          <div class="k">30</div>
+          <div class="l">голосовых</div>
+          <div class="s">8 мин 43 с</div>
+        </div>
+        <div class="kv">
+          <div class="k">65</div>
+          <div class="l">кружков</div>
+          <div class="s">15 мин 24 с</div>
+        </div>
+      </div>
+      <p class="footnote">Длина кругового видео за год — четверть часа твоего лица крупным планом.</p>
+    </div>
+  </section>
+
+  <!-- 7 · медиа -->
+  <section class="slide" aria-label="Медиа">
+    <div class="wrap reveal">
+      <h2>Что ещё ты отправлял</h2>
+      <div class="grid6">
+        <div><div class="k">1 622</div><div class="l">фото</div></div>
+        <div><div class="k">194</div><div class="l">стикера</div></div>
+        <div><div class="k">298</div><div class="l">файлов</div></div>
+        <div><div class="k">119</div><div class="l">видео</div></div>
+        <div><div class="k">26</div><div class="l">гифок</div></div>
+        <div><div class="k">25</div><div class="l">треков</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · режим дня -->
+  <section class="slide" aria-label="Режим дня">
+    <div class="wrap reveal">
+      <h2>Ты — ночной житель</h2>
+      <div class="hours" role="img" aria-label="Активность по часам суток, пик в 23 часа">
+        <i class="night" style="--h: 76"></i><i style="--h: 34"></i><i style="--h: 5"></i><i style="--h: 1"></i>
+        <i style="--h: 0.5"></i><i style="--h: 0.3"></i><i style="--h: 4"></i><i style="--h: 27"></i>
+        <i style="--h: 10"></i><i style="--h: 15"></i><i style="--h: 33"></i><i style="--h: 35"></i>
+        <i style="--h: 35"></i><i style="--h: 30"></i><i style="--h: 36"></i><i style="--h: 32"></i>
+        <i style="--h: 37"></i><i style="--h: 42"></i><i style="--h: 44"></i><i style="--h: 53"></i>
+        <i style="--h: 66"></i><i style="--h: 71"></i><i class="night" style="--h: 78"></i><i class="night peak" style="--h: 100"></i>
+      </div>
+      <div class="clock"><span>00</span><span style="flex:6"></span><span>06</span><span style="flex:5"></span><span>12</span><span style="flex:5"></span><span>18</span><span style="flex:4"></span><span>23</span></div>
+      <p class="footnote">Самый громкий час — 23:00: 2 430 сообщений. В 5 утра ты написал всего 7.</p>
+    </div>
+  </section>
+
+  <!-- 9 · месяцы -->
+  <section class="slide" aria-label="Год по месяцам">
+    <div class="wrap reveal">
+      <h2>Год разгонялся<br>к ноябрю</h2>
+      <div class="months" role="img" aria-label="Сообщения по месяцам, пик в ноябре">
+        <div style="height: 45%"></div><div style="height: 37%"></div><div style="height: 51%"></div>
+        <div style="height: 36%"></div><div style="height: 28%"></div><div style="height: 22%"></div>
+        <div style="height: 24%"></div><div style="height: 20%"></div><div style="height: 21%"></div>
+        <div style="height: 49%"></div><div class="hi" style="height: 100%"></div>
+      </div>
+      <div class="mlabels"><span>янв</span><span>фев</span><span>мар</span><span>апр</span><span>май</span><span>июн</span><span>июл</span><span>авг</span><span>сен</span><span>окт</span><span class="hi">ноя</span></div>
+      <p class="footnote">Ноябрь — 4 854 сообщения, рекорд года. А самый плотный день — 12 ноября: 415 сообщений.</p>
+    </div>
+  </section>
+
+  <!-- 10 · эмодзи -->
+  <section class="slide" aria-label="Эмодзи года">
+    <div class="wrap reveal">
+      <h2>Словарь года</h2>
+      <div class="emoji">
+        <div><b>🟣</b><span>280</span></div>
+        <div><b>✅</b><span>273</span></div>
+        <div><b>➡</b><span>202</span></div>
+        <div><b>❌</b><span>113</span></div>
+        <div><b>🎰</b><span>82</span></div>
+        <div><b>😀</b><span>79</span></div>
+        <div><b>👋</b><span>70</span></div>
+        <div><b>➖</b><span>66</span></div>
+        <div><b>❤</b><span>63</span></div>
+        <div><b>⛔</b><span>60</span></div>
+      </div>
+      <p class="footnote">Фиолетовый круг — твоё любимое «слово» года. Крутка в казино — на втором месте по любви после подтверждений.</p>
+    </div>
+  </section>
+
+  <!-- 11 · финал -->
+  <section class="slide final" aria-label="Итог и поделиться">
+    <div class="wrap">
+      <div class="reveal">
+        <h1>Это был<br>твой год</h1>
+        <p class="lead" style="margin-top: 20px;">20 984 сообщения, 594 чата, 691 336 символов и 2 435 реакций. Забери карточку с собой.</p>
+        <button class="btn" id="shareBtn">Поделиться</button>
+        <p class="footnote" id="shareHint">Если шаринг недоступен — карточка сохранится как фото.</p>
+      </div>
+      <div class="cardwrap reveal"><canvas id="card" width="1080" height="1350" aria-label="Карточка итогов года"></canvas></div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+const DATA = {
+  handle: '@FLYXSE',
+  out: 20984, chars: 691336, reactions: 2435,
+  chats: 594, voiceMin: 24,
+};
+
+/* — прогресс и счётчик — */
+const slides = [...document.querySelectorAll('.slide')];
+const progress = document.getElementById('progress');
+slides.forEach(() => progress.appendChild(document.createElement('i')));
+const counter = document.getElementById('counter');
+const hint = document.getElementById('hint');
+let current = -1;
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const i = slides.indexOf(e.target);
+    if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+      if (i !== current) {
+        current = i;
+        [...progress.children].forEach((seg, j) => seg.classList.toggle('done', j <= i));
+        counter.textContent = (i + 1) + ' / ' + slides.length;
+        hint.style.display = i === 0 ? '' : 'none';
+      }
+      e.target.classList.add('in');
+    }
+  });
+}, { threshold: 0.5 });
+slides.forEach(s => io.observe(s));
+
+/* — стрелки — */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+  e.preventDefault();
+  const next = slides[Math.min(slides.length - 1, Math.max(0, current + (e.key === 'ArrowDown' ? 1 : -1)))];
+  next.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
+
+/* — карточка — */
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+const C = { parchment: '#f2f0eb', ink: '#292827', stone: '#666666', mist: '#e3e3e2', wine: '#421d24', paper: '#ffffff' };
+const F = w => `${w} ${w <= 500 ? 460 : 500} `; // Inter variable weights via canvas font string
+function drawCard(ctx) {
+  const W = 1080, H = 1350, M = 84;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = C.parchment;
+  ctx.fillRect(0, 0, W, H);
+
+  // верхний винный штрих
+  ctx.fillStyle = C.wine;
+  roundRect(ctx, M, M, 96, 10, 5); ctx.fill();
+
+  ctx.fillStyle = C.stone;
+  ctx.font = '460 30px Inter, sans-serif';
+  ctx.fillText('Год в Telegram', M, M + 92);
+
+  ctx.fillStyle = C.wine;
+  ctx.font = '500 44px Inter, sans-serif';
+  ctx.fillText('2026', W - M - ctx.measureText('2026').width, M + 92);
+
+  // главная цифра
+  ctx.fillStyle = C.ink;
+  ctx.font = '460 200px Inter, sans-serif';
+  ctx.fillText('20 984', M - 8, 400);
+  ctx.fillStyle = C.stone;
+  ctx.font = '460 34px Inter, sans-serif';
+  ctx.fillText('сообщений отправлено за год', M, 452);
+
+  // сетка фактов
+  const rows = [
+    ['594', 'чата, где ты звучал'],
+    ['691 336', 'символов написано'],
+    ['2 435', 'получено реакций'],
+    ['24 мин', 'голосом: ГС и кружки'],
+  ];
+  let y = 520;
+  rows.forEach(([k, l]) => {
+    ctx.fillStyle = C.mist;
+    ctx.fillRect(M, y, W - 2 * M, 2);
+    ctx.fillStyle = C.ink;
+    ctx.font = '460 72px Inter, sans-serif';
+    ctx.fillText(k, M, y + 80);
+    ctx.fillStyle = C.stone;
+    ctx.font = '460 30px Inter, sans-serif';
+    ctx.fillText(l, M, y + 118);
+    y += 145;
+  });
+
+  // винный подвал
+  ctx.fillStyle = C.wine;
+  ctx.fillRect(0, H - 148, W, 148);
+  ctx.fillStyle = C.paper;
+  ctx.font = '500 36px Inter, sans-serif';
+  ctx.fillText('@FLYXSE', M, H - 66);
+  ctx.font = '460 28px Inter, sans-serif';
+  ctx.globalAlpha = 0.7;
+  ctx.fillText('итоги года', W - M - ctx.measureText('итоги года').width, H - 66);
+  ctx.globalAlpha = 1;
+}
+
+const card = document.getElementById('card');
+async function paintCard() {
+  try { await document.fonts.load('460 210px Inter'); await document.fonts.ready; } catch (e) {}
+  drawCard(card.getContext('2d'));
+}
+paintCard();
+
+/* — поделиться / сохранить фото — */
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+}
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  try { await document.fonts.ready; } catch (e) {}
+  const blob = await new Promise(res => card.toBlob(res, 'image/png'));
+  const file = new File([blob], 'telegram-god-2026.png', { type: 'image/png' });
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    try {
+      await navigator.share({ files: [file], title: 'Мой год в Telegram — 2026' });
+      return;
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = file.name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  showToast('Карточка сохранена как фото');
+});
+</script>
+</body>
+</html>

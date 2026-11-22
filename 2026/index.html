@@ -4,30 +4,115 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Год в Telegram — 2026</title>
+<meta name="theme-color" content="#fff8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17120f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%238b5000'/%3E%3Ctext x='16' y='22' font-family='lexend,sans-serif' font-size='15' font-weight='600' fill='%23ffdcbe' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  // Тема применяется до первой отрисовки — тот же ключ, что и на flyxse.github.io
+  (function () {
+    try {
+      var saved = localStorage.getItem('flyxse-theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  })();
+</script>
 <style>
+/* ══════════ Material 3 tokens (seed #AB845F, tonalSpot) — как на flyxse.github.io ══════════ */
 :root {
-  --parchment: #f2f0eb;
-  --ink: #292827;
-  --stone: #666666;
-  --mist: #e3e3e2;
-  --wine: #421d24;
-  --violet: #714cb6;
-  --lilac: #d4c7ff;
-  --lagoon: #0c4243;
-  --paper: #ffffff;
+  color-scheme: light dark;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 999px;
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-long1: 450ms;
+  --md-sys-elevation-level1: 0 1px 2px 0 rgba(0, 0, 0, .30), 0 1px 3px 1px rgba(0, 0, 0, .15);
+  --md-sys-elevation-level2: 0 1px 2px 0 rgba(0, 0, 0, .30), 0 2px 6px 2px rgba(0, 0, 0, .15);
+  --layout-max-width: 1120px;
 }
+:root, :root[data-theme="light"] {
+  --md-sys-color-primary: #8b5000;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdcbe;
+  --md-sys-color-on-primary-container: #2d1600;
+  --md-sys-color-tertiary: #58633a;
+  --md-sys-color-surface: #fff8f5;
+  --md-sys-color-on-surface: #201b16;
+  --md-sys-color-surface-variant: #f2dfd1;
+  --md-sys-color-on-surface-variant: #51453a;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #fdf1ea;
+  --md-sys-color-surface-container: #f7ece5;
+  --md-sys-color-surface-container-high: #f1e6df;
+  --md-sys-color-surface-container-highest: #ebe0d9;
+  --md-sys-color-outline: #837468;
+  --md-sys-color-outline-variant: #d5c3b5;
+  --md-sys-color-inverse-surface: #352f2b;
+  --md-sys-color-inverse-on-surface: #faefe7;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --md-sys-color-primary: #ffb871;
+  --md-sys-color-on-primary: #4a2800;
+  --md-sys-color-primary-container: #6a3c00;
+  --md-sys-color-on-primary-container: #ffdcbe;
+  --md-sys-color-tertiary: #c0cc9a;
+  --md-sys-color-surface: #17120f;
+  --md-sys-color-on-surface: #ebe0d9;
+  --md-sys-color-surface-variant: #51453a;
+  --md-sys-color-on-surface-variant: #d5c3b5;
+  --md-sys-color-surface-container-lowest: #120d0a;
+  --md-sys-color-surface-container-low: #201b16;
+  --md-sys-color-surface-container: #241f1a;
+  --md-sys-color-surface-container-high: #2e2924;
+  --md-sys-color-surface-container-highest: #3a342f;
+  --md-sys-color-outline: #9d8e81;
+  --md-sys-color-outline-variant: #51453a;
+  --md-sys-color-inverse-surface: #ebe0d9;
+  --md-sys-color-inverse-on-surface: #352f2b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --md-sys-color-primary: #ffb871;
+    --md-sys-color-on-primary: #4a2800;
+    --md-sys-color-primary-container: #6a3c00;
+    --md-sys-color-on-primary-container: #ffdcbe;
+    --md-sys-color-tertiary: #c0cc9a;
+    --md-sys-color-surface: #17120f;
+    --md-sys-color-on-surface: #ebe0d9;
+    --md-sys-color-surface-variant: #51453a;
+    --md-sys-color-on-surface-variant: #d5c3b5;
+    --md-sys-color-surface-container-lowest: #120d0a;
+    --md-sys-color-surface-container-low: #201b16;
+    --md-sys-color-surface-container: #241f1a;
+    --md-sys-color-surface-container-high: #2e2924;
+    --md-sys-color-surface-container-highest: #3a342f;
+    --md-sys-color-outline: #9d8e81;
+    --md-sys-color-outline-variant: #51453a;
+    --md-sys-color-inverse-surface: #ebe0d9;
+    --md-sys-color-inverse-on-surface: #352f2b;
+  }
+}
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
   margin: 0;
-  background: var(--parchment);
-  color: var(--ink);
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 460;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-family: 'Lexend', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
   overflow: hidden;
+  transition: background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+              color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
 }
 .deck {
   height: 100dvh;
@@ -36,7 +121,6 @@ body {
   scrollbar-width: none;
 }
 .deck::-webkit-scrollbar { display: none; }
-
 .slide {
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -45,124 +129,130 @@ body {
   align-items: center;
   padding: clamp(72px, 10vh, 120px) clamp(24px, 6vw, 96px);
 }
-.wrap {
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-}
+.wrap { width: 100%; max-width: var(--layout-max-width); margin: 0 auto; }
 
-/* — типографика — */
+/* — типографика: Lexend, как на сайте — */
 .display {
-  font-weight: 460;
-  font-feature-settings: 'tnum' 1;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.96;
   margin: 0;
+  font-feature-settings: 'tnum' 1;
+  transition: color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
 }
-.num { font-size: clamp(72px, 17vw, 190px); }
+.num { font-size: clamp(72px, 16vw, 180px); }
 .num-md { font-size: clamp(56px, 12vw, 132px); }
-h1, h2 { font-weight: 460; letter-spacing: -0.03em; line-height: 1.04; margin: 0; }
-h1 { font-size: clamp(40px, 7vw, 76px); }
-h2 { font-size: clamp(28px, 4.6vw, 49px); }
-.lead { font-size: clamp(16px, 2vw, 20px); line-height: 1.5; color: var(--ink); max-width: 46ch; }
-.footnote { font-size: 14px; line-height: 1.5; color: var(--stone); max-width: 52ch; margin-top: 14px; }
-.value { font-feature-settings: 'tnum' 1; letter-spacing: -0.02em; }
+h1, h2 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; margin: 0; transition: color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard); }
+h1 { font-size: clamp(38px, 6.4vw, 72px); }
+h2 { font-size: clamp(26px, 4.4vw, 45px); }
+.lead { font-size: clamp(16px, 2vw, 19px); line-height: 1.55; color: var(--md-sys-color-on-surface); max-width: 46ch; }
+.footnote { font-size: 14px; line-height: 1.55; color: var(--md-sys-color-on-surface-variant); max-width: 54ch; margin-top: 16px; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; }
 
-/* — прогресс, как в сторис — */
-.progress {
-  position: fixed; top: 14px; left: 18px; right: 18px;
-  display: flex; gap: 4px; z-index: 20;
-}
-.progress i {
-  flex: 1; height: 3px; border-radius: 999px;
-  background: var(--mist); overflow: hidden; position: relative;
-}
-.progress i::after {
-  content: ''; position: absolute; inset: 0;
-  background: var(--wine); transform: scaleX(0); transform-origin: left;
-  transition: transform .45s ease;
-}
+/* — прогресс как в сторис — */
+.progress { position: fixed; top: 14px; left: 18px; right: 84px; display: flex; gap: 4px; z-index: 20; }
+.progress i { flex: 1; height: 3px; border-radius: var(--md-sys-shape-corner-full); background: var(--md-sys-color-surface-container-highest); overflow: hidden; position: relative; }
+.progress i::after { content: ''; position: absolute; inset: 0; background: var(--md-sys-color-primary); transform: scaleX(0); transform-origin: left; transition: transform var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized); }
 .progress i.done::after { transform: scaleX(1); }
 .counter {
-  position: fixed; right: 18px; bottom: 16px; z-index: 20;
-  font-size: 13px; color: var(--stone); font-feature-settings: 'tnum' 1;
+  position: fixed; right: 18px; top: 10px; z-index: 21;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px; color: var(--md-sys-color-on-surface-variant); font-feature-settings: 'tnum' 1;
+}
+.theme-toggle {
+  position: fixed; right: 14px; top: 8px; z-index: 22;
+  width: 40px; height: 40px; border: none; border-radius: var(--md-sys-shape-corner-full);
+  background: transparent; color: var(--md-sys-color-on-surface-variant);
+  display: grid; place-items: center; cursor: pointer;
+}
+.theme-toggle:hover { background: var(--md-sys-color-surface-container-high); }
+.theme-toggle:focus-visible { outline: 2px solid var(--md-sys-color-primary); outline-offset: 2px; }
+.theme-toggle svg { width: 22px; height: 22px; fill: currentColor; }
+.theme-toggle .icon--moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon--sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon--moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon--sun { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .icon--moon { display: block; }
 }
 .hint {
   position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
-  z-index: 20; font-size: 14px; color: var(--stone);
+  z-index: 20; font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px; letter-spacing: .04em; color: var(--md-sys-color-on-surface-variant);
   animation: nudge 2.4s ease-in-out infinite;
 }
 @keyframes nudge { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
 
 /* — появление слайда — */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized), transform var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized); }
 .slide.in .reveal { opacity: 1; transform: none; }
 
-/* — бары чатов/типов — */
+/* — строки с барами — */
 .rows { display: flex; flex-direction: column; gap: 18px; margin-top: 36px; max-width: 560px; }
 .row { display: grid; grid-template-columns: minmax(96px, 1fr) 2.4fr auto; gap: 14px; align-items: center; }
 .row .name { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .row .name.ghost { filter: blur(7px); user-select: none; }
-.row .track { height: 12px; background: var(--mist); border-radius: 999px; overflow: hidden; }
-.row .fill { display: block; height: 100%; background: var(--ink); border-radius: 999px; width: 0; transition: width .7s cubic-bezier(.2,.7,.2,1); }
-.row.hero .fill { background: var(--wine); }
+.row .track { height: 12px; background: var(--md-sys-color-surface-container-highest); border-radius: var(--md-sys-shape-corner-full); overflow: hidden; }
+.row .fill { display: block; height: 100%; background: var(--md-sys-color-on-surface-variant); border-radius: var(--md-sys-shape-corner-full); width: 0; transition: width var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized), background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard); }
+.row.hero .fill { background: var(--md-sys-color-primary); }
 .row.hero .name { font-weight: 600; }
 .slide.in .fill { width: var(--w); }
-.row .val { font-size: 15px; font-feature-settings: 'tnum' 1; color: var(--stone); min-width: 5ch; text-align: right; }
+.row .val { font-size: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: 'tnum' 1; color: var(--md-sys-color-on-surface-variant); min-width: 5ch; text-align: right; }
 
 /* — голос/кружки — */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); margin-top: 40px; max-width: 640px; }
-.duo > div + div { border-left: 1px solid var(--mist); padding-left: clamp(24px, 5vw, 72px); }
-.kv .k { font-size: clamp(40px, 7vw, 88px); font-weight: 460; letter-spacing: -0.03em; line-height: 1; font-feature-settings: 'tnum' 1; }
-.kv .l { font-size: 15px; color: var(--stone); margin-top: 10px; }
-.kv .s { font-size: 14px; color: var(--ink); margin-top: 4px; }
+.duo > div + div { border-left: 1px solid var(--md-sys-color-outline-variant); padding-left: clamp(24px, 5vw, 72px); }
+.kv .k { font-size: clamp(40px, 7vw, 88px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; font-feature-settings: 'tnum' 1; }
+.kv .l { font-size: 15px; color: var(--md-sys-color-on-surface-variant); margin-top: 10px; }
+.kv .s { font-size: 14px; margin-top: 4px; }
 
 /* — медиа-сетка — */
 .grid6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 5vw, 64px) clamp(24px, 4vw, 56px); margin-top: 44px; max-width: 780px; }
-.grid6 > div { border-top: 1px solid var(--mist); padding-top: 14px; }
-.grid6 .k { font-size: clamp(34px, 5vw, 64px); font-weight: 460; letter-spacing: -0.03em; line-height: 1; font-feature-settings: 'tnum' 1; white-space: nowrap; }
-.grid6 .l { font-size: 14px; color: var(--stone); margin-top: 8px; }
+.grid6 > div { border-top: 1px solid var(--md-sys-color-outline-variant); padding-top: 14px; }
+.grid6 .k { font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; font-feature-settings: 'tnum' 1; white-space: nowrap; }
+.grid6 .l { font-size: 13px; font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; color: var(--md-sys-color-on-surface-variant); margin-top: 8px; }
 
-/* — полоса часов — */
+/* — часы — */
 .hours { display: flex; align-items: flex-end; gap: 2px; height: clamp(120px, 22vh, 200px); margin-top: 44px; max-width: 680px; }
-.hours i { flex: 1; background: var(--mist); border-radius: 3px 3px 0 0; height: calc(var(--h) * 1%); transition: height .6s cubic-bezier(.2,.7,.2,1); }
-.slide.in .hours i { height: calc(var(--h) * 1%); }
-.hours i.night { background: var(--wine); }
-.hours i.peak { background: var(--violet); }
+.hours i { flex: 1; background: var(--md-sys-color-surface-container-highest); border-radius: 4px 4px 0 0; height: calc(var(--h) * 1%); transition: height var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized), background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard); }
+.hours i.night { background: var(--md-sys-color-primary); }
+.hours i.peak { background: var(--md-sys-color-tertiary); }
 .clock { display: flex; gap: 2px; max-width: 680px; margin-top: 10px; }
-.clock span { flex: 1; text-align: left; font-size: 12px; color: var(--stone); font-feature-settings: 'tnum' 1; }
+.clock span { flex: 1; text-align: left; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: var(--md-sys-color-on-surface-variant); }
 
 /* — месяцы — */
 .months { display: flex; align-items: flex-end; gap: clamp(6px, 1.6vw, 18px); height: clamp(130px, 24vh, 220px); margin-top: 44px; max-width: 680px; }
-.months div { flex: 1; background: var(--mist); border-radius: 4px 4px 0 0; position: relative; }
-.months div.hi { background: var(--wine); }
+.months div { flex: 1; background: var(--md-sys-color-surface-container-highest); border-radius: 4px 4px 0 0; transition: background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard); }
+.months div.hi { background: var(--md-sys-color-primary); }
 .mlabels { display: flex; gap: clamp(6px, 1.6vw, 18px); max-width: 680px; margin-top: 10px; }
-.mlabels span { flex: 1; font-size: 12px; color: var(--stone); text-align: center; }
-.mlabels span.hi { color: var(--wine); font-weight: 600; }
+.mlabels span { flex: 1; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: var(--md-sys-color-on-surface-variant); text-align: center; }
+.mlabels span.hi { color: var(--md-sys-color-primary); font-weight: 500; }
 
 /* — эмодзи — */
 .emoji { display: flex; flex-wrap: wrap; gap: clamp(20px, 4vw, 56px); margin-top: 44px; max-width: 640px; }
 .emoji div { text-align: center; }
 .emoji b { display: block; font-size: clamp(40px, 7vw, 72px); font-weight: 400; line-height: 1.2; }
-.emoji span { display: block; font-size: 13px; color: var(--stone); margin-top: 6px; font-feature-settings: 'tnum' 1; }
+.emoji span { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: var(--md-sys-color-on-surface-variant); margin-top: 6px; }
 
 /* — финал — */
 .final .wrap { display: grid; grid-template-columns: 1fr auto; gap: clamp(32px, 6vw, 80px); align-items: center; }
-.cardwrap canvas { max-height: 58dvh; width: auto; max-width: 100%; display: block; }
+.cardwrap canvas { max-height: 58dvh; width: auto; max-width: 100%; display: block; border-radius: var(--md-sys-shape-corner-extra-large); box-shadow: var(--md-sys-elevation-level2); }
 .btn {
-  background: var(--wine); color: var(--paper);
-  border: none; border-radius: 16px;
-  padding: 16px 32px; font: inherit; font-size: 17px; font-weight: 500;
+  background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary);
+  border: none; border-radius: var(--md-sys-shape-corner-full);
+  padding: 14px 30px; font: inherit; font-size: 15px; font-weight: 500;
   cursor: pointer; margin-top: 28px;
+  transition: box-shadow var(--md-sys-motion-duration-short4, 200ms) var(--md-sys-motion-easing-standard), transform var(--md-sys-motion-duration-short4, 200ms) var(--md-sys-motion-easing-standard);
 }
-.btn:hover { background: #33161c; }
+.btn:hover { box-shadow: var(--md-sys-elevation-level1); }
 .btn:active { transform: scale(.98); }
-.btn:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+.btn:focus-visible { outline: 2px solid var(--md-sys-color-primary); outline-offset: 3px; }
 .toast {
   position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 80px);
-  background: var(--wine); color: var(--paper);
-  padding: 12px 20px; border-radius: 999px; font-size: 14px;
-  transition: transform .35s ease; z-index: 30; pointer-events: none;
+  background: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface);
+  padding: 12px 20px; border-radius: var(--md-sys-shape-corner-small); font-size: 14px;
+  box-shadow: var(--md-sys-elevation-level2);
+  transition: transform var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized); z-index: 30; pointer-events: none;
 }
 .toast.show { transform: translate(-50%, 0); }
 
@@ -185,6 +275,10 @@ h2 { font-size: clamp(28px, 4.6vw, 49px); }
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="counter" id="counter"></div>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+  <svg class="icon--sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+  <svg class="icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+</button>
 <div class="hint" id="hint">листай вниз</div>
 <div class="toast" id="toast">Карточка сохранена</div>
 
@@ -194,9 +288,12 @@ h2 { font-size: clamp(28px, 4.6vw, 49px); }
   <section class="slide" aria-label="Обложка">
     <div class="wrap" style="text-align:center">
       <div class="reveal">
-        <p class="footnote" style="margin:0 auto 18px">@FLYXSE</p>
-        <h1>Твой год<br>в Telegram</h1>
-        <div class="display num-md value" style="color: var(--wine); margin-top: 18px;">2026</div>
+        <span class="mono" style="display:inline-flex; align-items:center; gap:10px; font-size:12px; color:var(--md-sys-color-on-surface-variant);">
+          <span style="display:inline-grid; place-items:center; width:26px; height:26px; border-radius:9px; background:var(--md-sys-color-primary); color:var(--md-sys-color-primary-container); font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500;">&gt;_</span>
+          @FLYXSE
+        </span>
+        <h1 style="margin-top:18px">Твой год<br>в Telegram</h1>
+        <div class="display num-md" style="color: var(--md-sys-color-primary); margin-top: 18px;">2026</div>
       </div>
     </div>
   </section>
@@ -351,12 +448,6 @@ h2 { font-size: clamp(28px, 4.6vw, 49px); }
 </main>
 
 <script>
-const DATA = {
-  handle: '@FLYXSE',
-  out: 20984, chars: 691336, reactions: 2435,
-  chats: 594, voiceMin: 24,
-};
-
 /* — прогресс и счётчик — */
 const slides = [...document.querySelectorAll('.slide')];
 const progress = document.getElementById('progress');
@@ -381,7 +472,6 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 slides.forEach(s => io.observe(s));
 
-/* — стрелки — */
 document.addEventListener('keydown', e => {
   if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
   e.preventDefault();
@@ -389,7 +479,22 @@ document.addEventListener('keydown', e => {
   next.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 });
 
-/* — карточка — */
+/* — тема: тот же ключ, что на flyxse.github.io — */
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const root = document.documentElement;
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentDark = root.dataset.theme === 'dark' || (!root.dataset.theme && dark);
+  root.dataset.theme = currentDark ? 'light' : 'dark';
+  try { localStorage.setItem('flyxse-theme', root.dataset.theme); } catch (e) {}
+  paintCard();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => paintCard());
+
+/* — карточка в текущей теме — */
+function token(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#201b16';
+}
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -399,35 +504,35 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.arcTo(x, y, x + w, y, r);
   ctx.closePath();
 }
-const C = { parchment: '#f2f0eb', ink: '#292827', stone: '#666666', mist: '#e3e3e2', wine: '#421d24', paper: '#ffffff' };
-const F = w => `${w} ${w <= 500 ? 460 : 500} `; // Inter variable weights via canvas font string
 function drawCard(ctx) {
   const W = 1080, H = 1350, M = 84;
+  const surface = token('--md-sys-color-surface');
+  const ink = token('--md-sys-color-on-surface');
+  const stone = token('--md-sys-color-on-surface-variant');
+  const mist = token('--md-sys-color-outline-variant');
+  const primary = token('--md-sys-color-primary');
+  const onPrimary = token('--md-sys-color-on-primary');
   ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = C.parchment;
+  ctx.fillStyle = surface;
   ctx.fillRect(0, 0, W, H);
 
-  // верхний винный штрих
-  ctx.fillStyle = C.wine;
+  ctx.fillStyle = primary;
   roundRect(ctx, M, M, 96, 10, 5); ctx.fill();
 
-  ctx.fillStyle = C.stone;
-  ctx.font = '460 30px Inter, sans-serif';
-  ctx.fillText('Год в Telegram', M, M + 92);
-
-  ctx.fillStyle = C.wine;
-  ctx.font = '500 44px Inter, sans-serif';
+  ctx.fillStyle = stone;
+  ctx.font = '400 28px "JetBrains Mono", monospace';
+  ctx.fillText('год в telegram', M, M + 92);
+  ctx.fillStyle = primary;
+  ctx.font = '500 44px Lexend, sans-serif';
   ctx.fillText('2026', W - M - ctx.measureText('2026').width, M + 92);
 
-  // главная цифра
-  ctx.fillStyle = C.ink;
-  ctx.font = '460 200px Inter, sans-serif';
+  ctx.fillStyle = ink;
+  ctx.font = '300 200px Lexend, sans-serif';
   ctx.fillText('20 984', M - 8, 400);
-  ctx.fillStyle = C.stone;
-  ctx.font = '460 34px Inter, sans-serif';
+  ctx.fillStyle = stone;
+  ctx.font = '400 34px Lexend, sans-serif';
   ctx.fillText('сообщений отправлено за год', M, 452);
 
-  // сетка фактов
   const rows = [
     ['594', 'чата, где ты звучал'],
     ['691 336', 'символов написано'],
@@ -436,32 +541,36 @@ function drawCard(ctx) {
   ];
   let y = 520;
   rows.forEach(([k, l]) => {
-    ctx.fillStyle = C.mist;
+    ctx.fillStyle = mist;
     ctx.fillRect(M, y, W - 2 * M, 2);
-    ctx.fillStyle = C.ink;
-    ctx.font = '460 72px Inter, sans-serif';
+    ctx.fillStyle = ink;
+    ctx.font = '300 72px Lexend, sans-serif';
     ctx.fillText(k, M, y + 80);
-    ctx.fillStyle = C.stone;
-    ctx.font = '460 30px Inter, sans-serif';
+    ctx.fillStyle = stone;
+    ctx.font = '400 30px Lexend, sans-serif';
     ctx.fillText(l, M, y + 118);
     y += 145;
   });
 
-  // винный подвал
-  ctx.fillStyle = C.wine;
+  ctx.fillStyle = primary;
   ctx.fillRect(0, H - 148, W, 148);
-  ctx.fillStyle = C.paper;
-  ctx.font = '500 36px Inter, sans-serif';
+  ctx.fillStyle = onPrimary;
+  ctx.font = '500 36px Lexend, sans-serif';
   ctx.fillText('@FLYXSE', M, H - 66);
-  ctx.font = '460 28px Inter, sans-serif';
-  ctx.globalAlpha = 0.7;
+  ctx.font = '400 28px "JetBrains Mono", monospace';
+  ctx.globalAlpha = 0.8;
   ctx.fillText('итоги года', W - M - ctx.measureText('итоги года').width, H - 66);
   ctx.globalAlpha = 1;
 }
 
 const card = document.getElementById('card');
 async function paintCard() {
-  try { await document.fonts.load('460 210px Inter'); await document.fonts.ready; } catch (e) {}
+  try {
+    await document.fonts.load('300 200px Lexend');
+    await document.fonts.load('500 44px Lexend');
+    await document.fonts.load('400 28px "JetBrains Mono"');
+    await document.fonts.ready;
+  } catch (e) {}
   drawCard(card.getContext('2d'));
 }
 paintCard();
